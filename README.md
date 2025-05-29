@@ -1,3 +1,5 @@
+# Nakon kloniranja projekta pokreni komande npm install i npm run dev
+
 # 🛍️ Landing stranica sa listom kategorija (Fake Store API)
 
 - Na početnoj stranici prikazana je lista kategorija koje se dinamički povlače sa [Fake Store API](https://fakestoreapi.com/).
