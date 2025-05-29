@@ -23,7 +23,7 @@ export default function HeaderClient({ session }) {
               <span className={classes.CartBadge}>{cartCount}</span>
             )}
           </Link>
-          <div className="flex gap-3 justify-center">
+          <div>
             {session ? (
               <Link href="/profile" className="primary-btn">Profile</Link>
             ) : (

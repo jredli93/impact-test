@@ -2,10 +2,10 @@
 
 import React from 'react';
 import classes from '@/app/cart/Cart.module.css';
-import { useCart } from '../../context/CartContext';
-import QuantitySelector from '../components/ui/QuantitySelector/QuantitySelector';
+import { useCart } from '@/context/CartContext';
+import QuantitySelector from '@/app/components/ui/QuantitySelector/QuantitySelector';
 
-function Cart() {
+export default function Cart() {
   const { cartItems, totalPrice, removeFromCart, updateCartItemQuantity } = useCart();
 
   const handleRemove = (id) => {
@@ -61,5 +61,3 @@ function Cart() {
     </div>
   );
 }
-
-export default Cart;
