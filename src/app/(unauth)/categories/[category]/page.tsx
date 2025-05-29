@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import classes from '@/app/categories/[category]/CategoryCard.module.css'
-import AddToCart from '@/app/components/ui/AddToCart/AddToCart';
+import classes from '@/app/(unauth)/categories/[category]/CategoryCard.module.css'
+import AddToCart from '@/app/(unauth)/components/ui/AddToCart/AddToCart';
 import { auth } from '@/libs/auth';
 
 export default async function CategoryPage({ params }) {

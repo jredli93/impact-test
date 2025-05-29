@@ -1,4 +1,5 @@
 import { signIn } from '@/libs/auth';
+import classes from '@/app/(unauth)/sign-in/components/SignInForm.module.css'
 
 export default function SignInForm() {
   return (
@@ -10,7 +11,7 @@ export default function SignInForm() {
           await signIn('google', { redirectTo: '/' });
         }}
       >
-        <button className="primary-btn" type="submit">
+        <button className={classes.SignIn} type="submit">
           Sign in with Google
         </button>
       </form>

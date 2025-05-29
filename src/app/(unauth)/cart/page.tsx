@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import classes from '@/app/cart/Cart.module.css';
+import classes from '@/app/(unauth)/cart/Cart.module.css';
 import { useCart } from '@/context/CartContext';
-import QuantitySelector from '@/app/components/ui/QuantitySelector/QuantitySelector';
+import QuantitySelector from '@/app/(unauth)/components/ui/QuantitySelector/QuantitySelector';
 
 export default function Cart() {
   const { cartItems, totalPrice, removeFromCart, updateCartItemQuantity } = useCart();

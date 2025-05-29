@@ -1,6 +1,6 @@
 'use client';
 
-import classes from '@/app/components/ui/QuantitySelector/QuantitySelector.module.css';
+import classes from '@/app/(unauth)/components/ui/QuantitySelector/QuantitySelector.module.css';
 
 export default function QuantitySelector({ quantity, onIncrement, onDecrement }) {
   return (

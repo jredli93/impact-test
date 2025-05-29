@@ -1,4 +1,4 @@
-import Categories from '@/app/categories/Categories';
+import Categories from '@/app/(unauth)/categories/Categories';
 import { auth } from '@/libs/auth';
 import { Metadata } from 'next';
 import Link from 'next/link';

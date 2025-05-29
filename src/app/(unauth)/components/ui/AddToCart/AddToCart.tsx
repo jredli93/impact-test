@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
-import classes from '@/app/components/ui/AddToCart/AddToCart.module.css';
-import QuantitySelector from '../QuantitySelector/QuantitySelector';
+import classes from '@/app/(unauth)/components/ui/AddToCart/AddToCart.module.css';
+import QuantitySelector from '@/app/(unauth)/components/ui/QuantitySelector/QuantitySelector';
 
 export default function AddToCart({ product }) {
   const [quantity, setQuantity] = useState(1);

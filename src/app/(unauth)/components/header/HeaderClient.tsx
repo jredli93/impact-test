@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext'
-import classes from '@/app/components/header/Header.module.css';
+import classes from '@/app/(unauth)/components/header/Header.module.css';
 
 export default function HeaderClient({ session }) {
   const { cartItems } = useCart();

@@ -1,4 +1,4 @@
-import classes from '@/app/Categories/Categories.module.css'
+import classes from '@/app/(unauth)/categories/Categories.module.css'
 import Link from 'next/link';
 
 export default async function Categories() {

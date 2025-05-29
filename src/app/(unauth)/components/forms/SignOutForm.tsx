@@ -1,4 +1,5 @@
 import { signOut } from '@/libs/auth';
+import classes from '@/app/(unauth)/components/forms/SignOutForm.module.css'
 
 export default function SignOutForm() {
   return (
@@ -9,7 +10,7 @@ export default function SignOutForm() {
         await signOut({ redirectTo: '/' });
       }}
     >
-      <button type="submit" className="danger-btn">
+      <button type="submit" className={classes.SignOut}>
         Sign Out
       </button>
     </form>

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import '@/styles/global.css';
 import { ReactNode } from 'react';
-import Header from '@/app/components/header/Header';
-import Footer from '@/app/components/footer/Footer';
+import Header from '@/app/(unauth)/components/header/Header';
+import Footer from '@/app/(unauth)/components/footer/Footer';
 import { CartProvider } from '../context/CartContext';
 
 export const metadata: Metadata = {

@@ -1,5 +1,5 @@
 import { auth } from '@/libs/auth';
-import SignOutForm from '@/app/components/forms/SignOutForm';
+import SignOutForm from '@/app/(unauth)/components/forms/SignOutForm';
 
 import { Metadata } from 'next';
 import Link from 'next/link';
