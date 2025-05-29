@@ -1,0 +1,54 @@
+.Nav {
+    padding: 1rem 2rem;
+    background: #FEFF00;
+    height: 75px;
+    display: flex;
+    font-weight: bold;
+
+    .Container {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+.Links {
+  display: flex;
+  font-weight: bold;
+  gap: 1.5rem;
+}
+
+.Right {
+  display: flex;
+  align-items: center;
+}
+
+.Link {
+  color: #1f2937;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.Link:hover {
+  color: #111827;
+}
+
+.CartLink {
+  position: relative;
+}
+
+.CartBadge {
+  position: absolute;
+    top: -12px;
+    right: -7px;
+    background: #fafafa;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    color: black;
+}

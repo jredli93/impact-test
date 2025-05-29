@@ -1,0 +1,44 @@
+.CartWrapper {
+    width: 70vw;
+    margin:0 auto;
+    padding: 3rem 0;
+}
+
+.CartItemData {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.CartItemDataTitle {
+    flex: 0 1 50%;
+}
+
+.CartItemData h2 {
+    font-size: 1.2rem;
+}
+
+.CartItem {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d1d1;
+    padding: 2rem 4rem;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.Image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.Remove:hover {
+    cursor: pointer;
+}
+
+.CartLink {
+    position: relative;
+}

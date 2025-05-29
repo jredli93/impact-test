@@ -1,0 +1,22 @@
+.CartWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.Quantity button{
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+}
+
+.Quantity span {
+    margin: 0 5px;
+}
+
+.Add {
+    flex: 0 1 50%;
+    padding: .5rem 0.2rem;
+}

@@ -1,0 +1,32 @@
+.CategoriesWrapper {
+    width: 70vw;
+    margin:0 auto;
+    padding: 3rem 0;
+}
+
+.Categories {
+    margin-bottom: 2rem;
+}
+
+.CategoryCards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 640px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.CategoryCard {
+    background: #FEFF00;
+    padding: 3rem;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}

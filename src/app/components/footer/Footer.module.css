@@ -1,0 +1,6 @@
+.Footer {
+    display: grid;
+    place-items: center;
+    background: #e1e1e1;
+    height: 75px;
+}

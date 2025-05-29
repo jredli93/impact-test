@@ -1,7 +1,7 @@
 // app/profile/page.tsx
 import { auth } from '@/libs/auth';
 import Image from 'next/image';
-import SignOutForm from '@/components/SignOutForm';
+import SignOutForm from '@/app/components/forms/SignOutForm';
 import { redirect } from 'next/navigation';
 
 export default async function ProfilePage() {

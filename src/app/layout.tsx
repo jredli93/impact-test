@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import '@/styles/global.css';
 import { ReactNode } from 'react';
+import Header from '@/app/components/header/Header';
+import Footer from '@/app/components/footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Impact Web Shop',
@@ -11,15 +13,25 @@ export const metadata: Metadata = {
   },
 };
 
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className={roboto.className} lang="en">
       <body>
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
