@@ -3,6 +3,7 @@ import '@/styles/global.css';
 import { ReactNode } from 'react';
 import Header from '@/app/components/header/Header';
 import Footer from '@/app/components/footer/Footer';
+import { CartProvider } from '../context/CartContext';
 
 export const metadata: Metadata = {
   title: 'Impact Web Shop',
@@ -29,9 +30,11 @@ export default function RootLayout({
   return (
     <html className={roboto.className} lang="en">
       <body>
-        <Header/>
-        {children}
-        <Footer/>
+        <CartProvider>
+          <Header/>
+            {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

@@ -42,3 +42,8 @@
 .CartLink {
     position: relative;
 }
+
+.Price {
+    font-size: 2rem;
+    margin-top: 2rem;
+}

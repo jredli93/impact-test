@@ -1,22 +1,25 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import classes from '@/app/cart/Cart.module.css';
+import { useCart } from '../../context/CartContext';
+import QuantitySelector from '../components/ui/QuantitySelector/QuantitySelector';
 
 function Cart() {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-      setCartItems(JSON.parse(storedCart));
-    }
-  }, []);
+  const { cartItems, totalPrice, removeFromCart, updateCartItemQuantity } = useCart();
 
   const handleRemove = (id) => {
-    const updatedCart = cartItems.filter(item => item.id !== id);
-    setCartItems(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    removeFromCart(id);
+  };
+
+  const incrementQuantity = (id, currentQty) => {
+    updateCartItemQuantity(id, currentQty + 1);
+  };
+
+  const decrementQuantity = (id, currentQty) => {
+    if (currentQty > 1) {
+      updateCartItemQuantity(id, currentQty - 1);
+    }
   };
 
   if (cartItems.length === 0) {
@@ -38,7 +41,11 @@ function Cart() {
             <div className={classes.CartItemData}>
               <h2 className={classes.CartItemDataTitle}>{item.title}</h2>
               <p>Price: ${item.price}</p>
-              <p>Quantity: {item.quantity}</p>
+              <QuantitySelector
+                quantity={item.quantity}
+                onIncrement={() => incrementQuantity(item.id, item.quantity)}
+                onDecrement={() => decrementQuantity(item.id, item.quantity)}
+              />
               <img
                 className={classes.Remove}
                 width={25}
@@ -50,6 +57,7 @@ function Cart() {
           </div>
         ))}
       </div>
+      <span className={classes.Price}>Total price: ${totalPrice.toFixed(2)}</span>
     </div>
   );
 }

@@ -1,39 +1,48 @@
 'use client';
 
 import { useState } from 'react';
+import { useCart } from '@/context/CartContext';
 import classes from '@/app/components/ui/AddToCart/AddToCart.module.css';
-import { getCart, saveCart } from '@/utils/cart';
+import QuantitySelector from '../QuantitySelector/QuantitySelector';
 
 export default function AddToCart({ product }) {
   const [quantity, setQuantity] = useState(1);
+  const { cartItems, addToCart, updateCartItemQuantity } = useCart();
 
   const handleAddToCart = () => {
-    const currentCart = getCart();
-    const existingItemIndex = currentCart.findIndex(item => item.id === product.id);
+    const existingItem = cartItems.find(item => item.id === product.id);
 
-    if (existingItemIndex !== -1) {
-      currentCart[existingItemIndex].quantity += quantity;
+    if (existingItem) {
+      updateCartItemQuantity(product.id, existingItem.quantity + quantity);
     } else {
-      currentCart.push({
+      const item = {
         id: product.id,
         title: product.title,
         price: product.price,
         image: product.image,
-        quantity
-      });
+        quantity,
+      };
+      addToCart(item);
     }
 
-    saveCart(currentCart);
-    console.log(`Added ${quantity} of ${product.title} to cart`);
+    setQuantity(1);
+  };
+
+  const incrementQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  const decrementQuantity = () => {
+    setQuantity(prev => Math.max(1, prev - 1));
   };
 
   return (
     <div className={classes.CartWrapper}>
-      <div className={classes.Quantity}>
-        <button onClick={() => setQuantity(q => Math.max(1, q - 1))}>-</button>
-        <span>{quantity}</span>
-        <button onClick={() => setQuantity(q => q + 1)}>+</button>
-      </div>
+      <QuantitySelector
+        quantity={quantity}
+        onIncrement={incrementQuantity}
+        onDecrement={decrementQuantity}
+      />
       <button className={classes.Add} onClick={handleAddToCart}>
         Add to Cart
       </button>

@@ -2,17 +2,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useCart } from '@/context/CartContext'
 import classes from '@/app/components/header/Header.module.css';
 
 export default function HeaderClient({ session }) {
-  const [cartCount, setCartCount] = useState(0);
+  const { cartItems } = useCart();
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const total = storedCart.length;
-    setCartCount(total);
-  }, []);
+  const cartCount = cartItems.length;
 
   return (
     <nav className={classes.Nav}>

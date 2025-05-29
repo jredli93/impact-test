@@ -1,0 +1,9 @@
+.Quantity button{
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+}
+
+.Quantity span {
+    margin: 0 5px;
+}
